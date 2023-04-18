@@ -2,8 +2,10 @@ import React from 'react';
 
 class Todo extends React.Component {
     constructor(props){
-        super(props); this.state ={ item: props.item };
-    } 
+        super(props); 
+        this.state ={ item: props.item };
+    }
+
     render(){ 
         return (
             <div className="Todo">

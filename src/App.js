@@ -6,14 +6,18 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state ={
-      item :{id:0, title:"Hello World 1 ", done:true}, 
+      items :[ 
+        {id:0, title:"Todo 1 ", done:false}, 
+        {id:1, title:"Todo 2 ", done:false}, 
+      ],
     }; 
-  } render(){ 
-      return (
-        <div className="App">
-          <Todo item={this.state.item}/> 
-      </div>
-    ); 
+  } 
+  render(){
+    var todoItems =this.state.items.map((item,idx)=>(
+      <Todo item={item} key={item.id}/>
+    ));
+     
+    return <div className="App">{todoItems}</div>;
   } 
 }
 
